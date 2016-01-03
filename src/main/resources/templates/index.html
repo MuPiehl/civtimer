@@ -25,6 +25,12 @@
         <td>Assyria</td>
     </tr>
 
+    <tr th:each="nation : ${nations}">
+    <td th:text="${nation.id}">1</td>
+    <td><a href="#" th:text="${nation.title}">Title ...</a></td>
+    <td th:text="${nation.imageUrl}">ImageUrl ...</td>
+    </tr>
+
     <tr>
         <td><img src="../static/images/all_nations.png" th:src="@{/images/all_nations.png}"/></td>
     </tr>
