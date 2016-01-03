@@ -2,9 +2,5 @@
 .idea
 /target
 /civ_timer.iml
-
 *.class
 
-*.class
-
-target/classes/de/mpi/TestGitAdd.class
