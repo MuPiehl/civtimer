@@ -26,9 +26,10 @@
     </tr>
 
     <tr th:each="nation : ${nations}">
-    <td th:text="${nation.id}">1</td>
-    <td><a href="#" th:text="${nation.title}">Title ...</a></td>
-    <td th:text="${nation.imageUrl}">ImageUrl ...</td>
+        <td th:text="${nation.id}">1</td>
+        <td><a href="#" th:text="${nation.title}">Title ...</a></td>
+        <td th:text="${nation.imageUrl}">ImageUrl ...</td>
+        <td><img src="../static/images/w_3_assyria.png" th:src="@{/images/} +${nation.imageUrl}"/></td>
     </tr>
 
     <tr>

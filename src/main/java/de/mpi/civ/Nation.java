@@ -16,7 +16,7 @@ public class Nation {
 
 
     public String getImageUrl() {
-        return id + "_" + region + "_" + title.toLowerCase() + ".png";
+        return region + "_" + id + "_" + title.toLowerCase() + ".png";
     }
 
     public int getId(){ return id;}
