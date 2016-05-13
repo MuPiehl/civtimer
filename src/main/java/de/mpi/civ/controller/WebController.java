@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class WebController {
-  private static Logger log = LoggerFactory.getLogger(WebController.class);
+    private static Logger log = LoggerFactory.getLogger(WebController.class);
 
 //    @RequestMapping("/")
 ////@ResponseBody
@@ -26,7 +26,8 @@ public class WebController {
 //        return "index";
 //    }
 
-    @RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
+    //    @RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"*"}, method = RequestMethod.GET)
     public String index(Model model) {
 
         /*
@@ -44,12 +45,14 @@ public class WebController {
     }
 
     @RequestMapping(value = {"process_input"}, method = RequestMethod.POST)
-    public String value(HttpServletRequest httpRequest, Model model,   InitData initData, HttpServletResponse response) {
+    public String value(HttpServletRequest httpRequest, Model model, InitData initData, HttpServletResponse response) {
 
-      log.debug("process_input: " +initData.getNumberOfPlayer().toString());
+        log.debug("process_input: " + initData.getNumberOfPlayer().toString());
 
-        return GameUnit.getCurrentGame().getStatus().toString();
-//        return "index";
+        model.addAttribute("nations", GlobalNationList.getAll());
+
+//        return GameUnit.getCurrentGame().getStatus().toString();
+        return "index";
     }
 
 
