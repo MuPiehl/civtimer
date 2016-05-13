@@ -12,6 +12,8 @@ public class GlobalNationList {
         List<Nation> result = new ArrayList<Nation>();
         result.add(new Nation(1, Region.WEST, "Minoa"));
         result.add(new Nation(2, Region.EAST, "Saba"));
+        result.add(new Nation(3, Region.WEST, "Assyria"));
+        result.add(new Nation(4, Region.EAST, "Maurya"));
         return result;
     }
 }
