@@ -8,11 +8,21 @@ public enum Region {
     private String value;
 
     Region(String value) {
-        this.value = value;
+        value = value;
     }
 
     @Override
     public String toString() {
         return value;
+    }
+
+    public static Region newRegion(String regionName) {
+        switch (regionName) {
+            case "w":
+            case    "west":return WEST;
+            case "e":
+            case "east":  return EAST;
+        }
+        return null;
     }
 }

@@ -2,6 +2,7 @@ package de.mpi.civ.controller;
 
 import de.mpi.civ.GlobalNationList;
 import de.mpi.civ.data.InitData;
+import de.mpi.civ.game.engine.CivGame;
 import de.mpi.civ.game.engine.GameUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,12 +48,16 @@ public class WebController {
     @RequestMapping(value = {"process_input"}, method = RequestMethod.POST)
     public String value(HttpServletRequest httpRequest, Model model, InitData initData, HttpServletResponse response) {
 
+        CivGame game = GameUnit.getCurrentGame();
+
+        game.init(initData);
+
         log.debug("process_input: " + initData.getNumberOfPlayer().toString());
 
-        model.addAttribute("nations", GlobalNationList.getAll());
+//        model.addAttribute("nations", GlobalNationList.getAll());
 
-//        return GameUnit.getCurrentGame().getStatus().toString();
-        return "index";
+        return game.getStatus().toString();
+        //   return "index";
     }
 
 
