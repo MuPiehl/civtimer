@@ -13,7 +13,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.1.8.RELEASE</version>
+        <version>1.2.5.RELEASE</version>
+        <!--<version>1.1.8.RELEASE</version>-->
     </parent>
 
 
@@ -48,11 +49,11 @@
             <version>6.9.6</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
-        <!--dependency>
+        <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
             <version>3.2.2</version>
-        </dependency-->
+        </dependency>
         <!-- Spring data mongodb -->
         <!--dependency>
             <groupId>org.springframework.data</groupId>
