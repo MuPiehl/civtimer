@@ -41,8 +41,8 @@ public class WebController {
 */
         model.addAttribute("nations", GlobalNationList.getAll());
 
-        return GameUnit.getCurrentGame().getStatus().toString();
-//        return "index";
+//        return GameUnit.getCurrentGame().getStatus().toString();
+        return "index";
     }
 
     @RequestMapping(value = {"process_input"}, method = RequestMethod.POST)
