@@ -8,7 +8,7 @@ public enum Region {
     private String value;
 
     Region(String value) {
-        value = value;
+        this.value = value;
     }
 
     @Override
