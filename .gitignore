@@ -3,7 +3,7 @@
 /target
 /civ_timer.iml
 *.class
+*.iml
 
 
-/civ_timer.iml
 /logback.log
