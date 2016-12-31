@@ -48,6 +48,7 @@ public class AdminController {
 
         //  DBCollection collection = mongo.getDB("mongo_test").getCollection("vorgaenge");
 
+//        MongoCollection<Document> collection = mongo.getDatabase("mongo_test").getCollection("vorgaenge").find().spliterator();
         MongoCollection<Document> collection = mongo.getDatabase("mongo_test").getCollection("vorgaenge");
 
         long count = collection.count();
