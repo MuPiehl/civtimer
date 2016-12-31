@@ -19,9 +19,11 @@ public enum Region {
     public static Region newRegion(String regionName) {
         switch (regionName) {
             case "w":
-            case    "west":return WEST;
+            case "west":
+                return WEST;
             case "e":
-            case "east":  return EAST;
+            case "east":
+                return EAST;
         }
         return null;
     }

@@ -1,5 +1,7 @@
 package de.mpi.civ.controller;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.*;
 
 
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -39,10 +42,11 @@ public class AdminController {
     public List<MongoOverviewDto> getMongoOverview() {
         List<MongoOverviewDto> result = new ArrayList<>();
 
-//        BasicDBObject basicDBObject = new BasicDBObject();
+        BasicDBObject basicDBObject = new BasicDBObject();
 
 //        DBCursor dbCursor =
 
+        //  DBCollection collection = mongo.getDB("mongo_test").getCollection("vorgaenge");
 
         MongoCollection<Document> collection = mongo.getDatabase("mongo_test").getCollection("vorgaenge");
 
@@ -50,20 +54,34 @@ public class AdminController {
         log.debug("Dokumente gefunden in Vorgaenge: " + count);
 
         Stream<Document> documentStream = StreamSupport.stream(collection
-                .find(new Document("test", new Document("$gte", 125))).spliterator(), false);
+                .find(new Document("test", new Document("$gte", 2))).spliterator(), false);
 //        DBCursor dbCursor = collection.find(basicDBObject);
 //        FindIterable<Document> documents = collection.find(new Document("test", "$gt:5"));
 
 //        log.debug("gefiltert (\"$gte\", 125): " + documentStream.count());
         documentStream.forEach((document) -> {
+                    log.debug("json: " + document.toJson());
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    objectMapper.configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false);
+
+                    MongoOverviewDto overviewDto = null;
+
+                    try {
+                        overviewDto = objectMapper.readValue(document.toJson(), MongoOverviewDto.class);
+                        log.debug("Dto.Test: " + overviewDto.getTest());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
                     ObjectId id = (ObjectId) document.get("_id");
                     Integer test = new Integer(document.getDouble("test").intValue());
 
                     log.debug("id: " + id);
                     log.debug("test: " + test);
-                    MongoOverviewDto dto = new MongoOverviewDto(id, test);
+                    //  MongoOverviewDto dto = new MongoOverviewDto(id, test);
 
-                    result.add(dto);
+                    result.add(overviewDto);
                 }
 
         );

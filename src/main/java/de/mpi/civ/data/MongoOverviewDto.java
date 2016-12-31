@@ -1,5 +1,6 @@
 package de.mpi.civ.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.mongodb.DBObject;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -8,32 +9,35 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * Created by matthiaspiehl on 13.07.16.
  */
-@Document
+//@Document
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class MongoOverviewDto {
-    @Id
-    private String _id;
-    private Integer test;
+//    @Id
+//   private ObjectId _id;
+    private Double test;
 
+    public MongoOverviewDto() {
 
+    }
 
-    public MongoOverviewDto(ObjectId id, Integer test) {
-        this._id = id.toString();
+    public MongoOverviewDto(ObjectId id, Double test) {
+//        this._id = id;
         this.test = test;
     }
 
-    public String get_id() {
-        return _id;
-    }
+//    public ObjectId get_id() {
+//        return _id;
+//    }
 
-    public void set_id(String _id) {
-        this._id = _id;
-    }
+//    public void set_id(ObjectId _id) {
+//        this._id = _id;
+//    }
 
-    public Integer getTest() {
+    public Double getTest() {
         return test;
     }
 
-    public void setTest(Integer test) {
+    public void setTest(Double test) {
         this.test = test;
     }
 
