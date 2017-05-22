@@ -5,9 +5,9 @@ import de.mpi.civ.Region;
 import de.mpi.civ.dao.GameDao;
 import de.mpi.civ.data.GameDto;
 import de.mpi.civ.game.Player;
-import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
-import org.testng.annotations.Test;
+import org.junit.Test;
+
 
 import java.util.ArrayList;
 import java.util.List;

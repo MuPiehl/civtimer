@@ -1,7 +1,7 @@
 package mpi;
 
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
