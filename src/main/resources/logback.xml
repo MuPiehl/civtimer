@@ -18,7 +18,7 @@
     </appender>
 
 
-    <logger name="de.mpi.civ" level="DEBUG" additivity="false">
+    <logger name="de.de.mpi.civ" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT" />
         <!--<appender-ref ref="FILE" />-->
     </logger>

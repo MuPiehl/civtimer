@@ -1,8 +1,7 @@
-package mpi.civ.dao;
+package de.mpi.civ.dao;
 
 import de.mpi.civ.Nation;
 import de.mpi.civ.Region;
-import de.mpi.civ.dao.GameDao;
 import de.mpi.civ.data.GameDto;
 import de.mpi.civ.game.Player;
 import org.joda.time.LocalDateTime;

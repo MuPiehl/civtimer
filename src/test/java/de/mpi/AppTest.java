@@ -1,4 +1,4 @@
-package mpi;
+package de.mpi;
 
 
 import org.junit.Test;

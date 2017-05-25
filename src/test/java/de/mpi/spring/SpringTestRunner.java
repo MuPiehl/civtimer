@@ -1,5 +1,7 @@
-package mpi.spring;
+package de.mpi.spring;
 
+
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -8,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import static org.junit.Assert.assertEquals;
 
 
 /**
@@ -33,6 +37,8 @@ public class SpringTestRunner {
         log.debug("spring hat Config gelesen:");
         log.debug("mongodbUrl: " + mongodbUrl);
         log.debug("defaultDb: " + defaultDb);
+
+        assertEquals("hello", defaultDb);
     }
 
 }
