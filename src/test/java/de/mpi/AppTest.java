@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 public class AppTest {
     @Test
-    void testHttpClient() {    /*
+    public void testHttpClient() {    /*
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://www.test.de");
 
