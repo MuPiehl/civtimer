@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
  * Created by matthiaspiehl on 22.05.17.
  */
 @Configuration()
-@ComponentScan(basePackages = { "de.mpi.*" })
+@ComponentScan(basePackages = { "de.mpi" })
 @PropertySource("config.properties")
 public class TestConfig {
     //1.2.3.4
