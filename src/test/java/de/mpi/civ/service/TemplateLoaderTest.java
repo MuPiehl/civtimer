@@ -25,7 +25,7 @@ public class TemplateLoaderTest {
     @Test
     public void testeAlles() {
         byte[] templatedata;
-        templatedata = templateLoader.loadTemplate("abc123");    nmn
+        templatedata = templateLoader.loadTemplate("abc123");
 
         Assert.assertEquals(0, templatedata.length);
     }
